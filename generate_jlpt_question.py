@@ -13,7 +13,6 @@ def generate_JLPT_questions(N:int, number_of_questions:int = 10):
         # 這裡的 API_KEY 是示範用的，請替換為您的實際 API 金鑰
         load_dotenv()  # 自動載入 .env 檔案中的環境變數
         API_KEY = os.getenv("MY_GOOGLE_API_KEY")
-        print(API_KEY)
         prompt = f"給我多樣化.不重複的{number_of_questions}題JLPT N{N}難度的單字填空4選1選擇題，包括：詞彙填空（文脈判斷）.類義詞選擇.反義詞選擇.熟語・慣用語填空.外來語應用.動詞活用填空.漢字讀音測驗.日文同音異義詞測驗，並輸出成json，欄位包含ID,Category,Question,Option A,Option B,Option C,Option D,Answer，Answer只要A.B.C.D其中之一就好，回傳json格式"
 
         client = genai.Client(api_key=API_KEY)
@@ -68,7 +67,7 @@ def generate_JLPT_questions(N:int, number_of_questions:int = 10):
             print(f"CSV 檔案 '{csv_file_name}' 已成功生成。")
 
 
-generate_JLPT_questions(N=2, number_of_questions=10)
+generate_JLPT_questions(N=3, number_of_questions=10)
 
 
 
