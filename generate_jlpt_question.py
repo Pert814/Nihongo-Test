@@ -66,8 +66,7 @@ def generate_JLPT_questions(N:int, number_of_questions:int = 10):
                     writer.writerow([item["ID"], item["Category"], item["Question"], item["Option A"], item["Option B"], item["Option C"], item["Option D"], item["Answer"]])
             print(f"CSV 檔案 '{csv_file_name}' 已成功生成。")
 
-
-generate_JLPT_questions(N=3, number_of_questions=10)
+# Test: generate_JLPT_questions(N=3, number_of_questions=10)
 
 
 
